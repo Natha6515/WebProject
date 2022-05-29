@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Down</title>
+
+    <style>
+
+*{
+    margin : 0px;
+    padding: 0px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tdbox{
+
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(steelblue,#4ebcbc);
+}
+
+#dbox{
+
+    height: 100px;
+    width: 700px;
+    background-color: rgb(232, 223, 205);
+    box-shadow: inset 0 0 10px #000;
+    color: black;
+    line-height: 100px;
+    text-align: center;
+    font-size: large;
+    margin-top: 0px;
+    box-shadow: 1px 1px 0px #000,2px 2px 0px #000,3px 3px 0px #000,4px 4px 0px #000,;
+
+
+}
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="tdbox">
+        <h2>Count Down</h2>
+        <p id="dbox"></p>
+        <h2 id="end"></h2>
+        
+    </div>
+
+    <script>
+var countDownDate = new Date("april 28, 2022 16:37:52").getTime();
+
+var myfunc = setInterval(function() {
+
+var now = new Date().getTime();
+var timeleft = countDownDate - now;
+    
+var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+    
+document.getElementById("dbox").innerHTML = '<span style="font-size: 40px;">'+days+'</span>' + "days<span style='font-size: 40px;''>:</span>" + '<span style="font-size: 40px;">'+hours+'</span>' + "hr<span style='font-size: 20px;''><span style='font-size: 40px;''>:</span>" +
+'<span style="font-size: 40px;">'+minutes+'</span>' + "min<span style='font-size: 40px;''>:</span>" + '<span style="font-size: 40px;">'+seconds+'</span>' +"sec";
+if (timeleft < 0) {
+    clearInterval(myfunc);
+   
+    document.getElementById("dbox").innerHTML = "00" + "days " + "00" + "hr" + "00" + "min" + "00" +"sec";
+    document.getElementById("end").innerHTML = "TIME UP!!";
+}
+}, 1000);
+
+
+var timefunc = setInterval(function() {
+
+var now = new Date().getTime();
+var timeleft = countDownDate - now;
+    
+var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+    
+document.getElementById("dbox").innerHTML = '<span style="font-size: 40px;">'+days+'</span>' + "days<span style='font-size: 40px;''>:</span>" + '<span style="font-size: 40px;">'+hours+'</span>' + "hr<span style='font-size: 20px;''><span style='font-size: 40px;''>:</span>" +
+'<span style="font-size: 40px;">'+minutes+'</span>' + "min<span style='font-size: 40px;''>:</span>" + '<span style="font-size: 40px;">'+seconds+'</span>' +"sec";
+if (timeleft < 0) {
+    clearInterval(myfunc);
+   
+    document.getElementById("dbox").innerHTML = "00" + "days " + "00" + "hr" + "00" + "min" + "00" +"sec";
+    document.getElementById("end").innerHTML = "TIME UP!!";
+}
+}, 1000);
+
+
+</script>
+</body>
+</html>
+
+    </script>
+
+</body>
+</html>
